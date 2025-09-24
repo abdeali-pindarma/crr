@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Competitive Exams Roadmap</title>
+    <link rel="stylesheet" href="roadmap.css" />
+    <!-- FontAwesome for university icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <main class="container">
+        <h1>Competitive Exams Roadmap</h1>
+
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" placeholder="Search exams..." aria-label="Search exams" autocomplete="off" />
+            <span class="search-icon">
+        <i class="fas fa-search"></i>
+      </span>
+        </div>
+
+        <select id="examSelect" aria-label="Select exam">
+      <!-- Options populated by JS -->
+    </select>
+
+        <section id="collegeList" aria-live="polite" aria-atomic="true" role="region"></section>
+
+        <section id="roadmapDetails" aria-live="polite" aria-atomic="true" role="region"></section>
+    </main>
+
+    <script src="roadmap.js"></script>
+</body>
+
+</html>

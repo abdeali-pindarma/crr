@@ -1,0 +1,44 @@
+<!-- Place this inside the .profile-card, wherever you prefer -->
+<button class="profile-btn" onclick="goToProfile()">View Full Profile
+<link rel="stylesheet" href="profile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <div class="user-profile-container">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="profile-avatar" id="avatarImg" onclick="openProfileModal()">
+                    <h2 id="profileName">Alex Johnson</h2>
+                    <p class="profile-bio" id="profileBio">Web Developer • Dreamer • Coffee Enthusiast</p>
+                    <button class="edit-btn" onclick="editProfile()">Edit Profile</button>
+</div>
+<div class="profile-socials">
+    <a href="#" class="fa-brands fa-github"></a>
+    <a href="#" class="fa-brands fa-linkedin"></a>
+    <a href="#" class="fa-brands fa-twitter"></a>
+</div>
+<div class="profile-stats">
+    <div>
+        <span class="stat-number" id="projectsNum">15</span>
+        <span class="stat-label">Projects</span>
+    </div>
+    <div>
+        <span class="stat-number" id="followersNum">1,250</span>
+        <span class="stat-label">Followers</span>
+    </div>
+    <div>
+        <span class="stat-number" id="followingNum">322</span>
+        <span class="stat-label">Following</span>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Profile Edit Modal (Hidden by Default) -->
+<div class="profile-modal" id="profileModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEdit()">&times;</span>
+        <h2>Edit Profile</h2>
+        <label>Name: <input type="text" id="editName" value="Alex Johnson"></label>
+        <label>Bio: <input type="text" id="editBio" value="Web Developer • Dreamer • Coffee Enthusiast"></label>
+        <button onclick="saveProfile()">Save</button>
+        </button>
+    </div>

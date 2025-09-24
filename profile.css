@@ -1,0 +1,217 @@
+@keyframes pulseGlow {
+    0%,
+    100% {
+        box-shadow: 0 10px 28px rgba(98, 113, 199, 0.85);
+    }
+    50% {
+        box-shadow: 0 14px 40px rgba(98, 113, 199, 0.65);
+    }
+}
+
+.user-profile-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0;
+}
+
+.profile-card {
+    background: linear-gradient(130deg, #e0e7ff 60%, #dbeafe 100%);
+    border-radius: 25px;
+    box-shadow: 0 8px 40px 0 rgba(40, 120, 210, 0.13);
+    max-width: 350px;
+    width: 90vw;
+    text-align: center;
+    padding: 30px 24px 24px 24px;
+    transition: transform 0.4s cubic-bezier(.19, 1, .22, 1), box-shadow 0.25s;
+    position: relative;
+}
+
+.profile-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 40px 0 rgba(40, 120, 210, 0.2);
+}
+
+
+/* AVATAR with smooth scale and pointer */
+
+.profile-avatar {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    border: 5px solid #6366f1;
+    box-shadow: 0 4px 16px #818cf88f;
+    object-fit: cover;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.22s, box-shadow 0.18s;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.07) rotate(-2deg);
+    box-shadow: 0 8px 32px #a5b4fc9c;
+}
+
+.profile-card h2 {
+    font-weight: 700;
+    font-size: 1.7em;
+    margin: 0.4em 0 0.1em 0;
+    color: #334155;
+}
+
+.profile-bio {
+    color: #446;
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.edit-btn {
+    display: inline-block;
+    padding: 6px 20px;
+    background: #6366f1;
+    color: #fff;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 4px;
+    transition: background 0.2s;
+}
+
+.edit-btn:hover {
+    background: #4338ca;
+}
+
+.profile-socials {
+    margin: 18px 0 0 0;
+}
+
+.profile-socials a {
+    margin: 0 8px;
+    font-size: 1.4em;
+    color: #7c3aed;
+    transition: color 0.2s, transform 0.15s;
+    text-decoration: none;
+}
+
+.profile-socials a:hover {
+    color: #f59e42;
+    transform: scale(1.3);
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 18px;
+}
+
+.profile-stats div {
+    text-align: center;
+}
+
+.stat-number {
+    font-weight: 700;
+    font-size: 1.25em;
+    color: #6366f1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.97em;
+    color: #4b5563;
+}
+
+
+/* Modal with smooth fade in */
+
+.profile-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.33s cubic-bezier(.23, 1, .32, 1);
+}
+
+.profile-modal.open {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* Modal content, drop in animation */
+
+.modal-content {
+    background: #fff;
+    padding: 32px 28px;
+    border-radius: 20px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    box-shadow: 0 5px 24px rgba(70, 70, 210, 0.13);
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: dropIn 0.33s cubic-bezier(.23, 1, .32, 1) forwards;
+}
+
+.profile-modal.open .modal-content {
+    animation: dropIn 0.33s cubic-bezier(.23, 1, .32, 1) forwards;
+}
+
+@keyframes dropIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content .close {
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    font-size: 1.7em;
+    color: #656;
+    cursor: pointer;
+}
+
+.modal-content label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    margin-top: 3px;
+}
+
+.modal-content button {
+    background: #6366f1;
+    color: #fff;
+    padding: 8px 0;
+    border-radius: 10px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #9333ea;
+}
